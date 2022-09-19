@@ -1,4 +1,4 @@
-class AccountsController < ApplicationController
+class Api::AccountsController < ApplicationController
 
   def index
     @accounts = Account.all
@@ -26,6 +26,7 @@ class AccountsController < ApplicationController
     @account = Account.find_by(id: params[:id])
     @account.update(account_params)
     render json: @post
+  end
 
   def destroy
     @account = Account.find_by(id: params[:id])
