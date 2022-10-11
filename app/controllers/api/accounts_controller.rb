@@ -15,7 +15,13 @@ class Api::AccountsController < ApplicationController
   end
 
   def create
-    @account = Account.create(account_params)
+   @account = Account.create(account_params)
+
+   if @account.valid?
+      render json: { account: AccountSerializer.new(@account) }, status: :created
+    else
+      render json: { error: 'account creation failed' }, status: :not_acceptable
+    end
   end
 
   def edit
@@ -36,6 +42,6 @@ class Api::AccountsController < ApplicationController
   private
 
   def account_params
-    params.require(:account).permit(:name, :email, :phone, :rank)
+    params.require(:account).permit(:name, :email, :phone, :rank, :password)
   end
 end
