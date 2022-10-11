@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     # delete "/accounts/:id", to: "accounts#destroy"
 
       resources :accounts
+      post '/login', to: 'auth#create'
       resources :restaurants
   end
 end

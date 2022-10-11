@@ -1,4 +1,5 @@
 class Api::AccountsController < ApplicationController
+  skip_before_action :authorized, only: [:create, :view]
 
   def index
     @accounts = Account.all
@@ -18,9 +19,11 @@ class Api::AccountsController < ApplicationController
    @account = Account.create(account_params)
 
    if @account.valid?
-      render json: { account: AccountSerializer.new(@account) }, status: :created
+
+      @token = encode_token(account_id: @account.id)
+      render json: { account: AccountSerializer.new(@account), jwt: @token}, status: :created
     else
-      render json: { error: 'account creation failed' }, status: :not_acceptable
+      render json: { error: 'failed to create user' }, status: :not_acceptable
     end
   end
 
