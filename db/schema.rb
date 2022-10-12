@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_11_095034) do
+ActiveRecord::Schema.define(version: 2022_10_12_090655) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,8 +25,25 @@ ActiveRecord::Schema.define(version: 2022_10_11_095034) do
     t.string "password_digest"
   end
 
+  create_table "menuitems", force: :cascade do |t|
+    t.string "name"
+    t.decimal "price"
+    t.string "image"
+    t.string "restaurant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orderitems", force: :cascade do |t|
+    t.string "name"
+    t.decimal "price"
+    t.string "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "orders", force: :cascade do |t|
-    t.integer "totalPrice"
+    t.decimal "totalPrice"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "restaurant_id"

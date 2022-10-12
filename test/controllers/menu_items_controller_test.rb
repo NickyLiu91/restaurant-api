@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class MenuItemsControllerTest < ActionDispatch::IntegrationTest
+class MenuitemsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

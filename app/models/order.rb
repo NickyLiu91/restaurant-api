@@ -1,5 +1,5 @@
 class Order < ApplicationRecord
   belongs_to :restaurant
 
-  has_many :orderItems
+  has_many :orderitems
 end

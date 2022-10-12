@@ -1,8 +1,8 @@
 class CreateOrderItems < ActiveRecord::Migration[5.2]
   def change
-    create_table :order_items do |t|
+    create_table :orderitems do |t|
       t.string :name
-      t.string :price
+      t.decimal :price
       t.string :order_id
 
       t.timestamps

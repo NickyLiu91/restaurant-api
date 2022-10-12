@@ -1,5 +1,5 @@
 class AccountSerializer < ActiveModel::Serializer
-  attributes :id, :name, :email, :phone, :rank, :restaurants
+  attributes :id, :name, :email, :phone, :rank
 
-  has_many :restaurants
+  has_one :restaurant
 end

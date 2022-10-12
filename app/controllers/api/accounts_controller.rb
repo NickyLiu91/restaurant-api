@@ -1,5 +1,5 @@
 class Api::AccountsController < ApplicationController
-  skip_before_action :authorized, only: [:create, :view]
+  skip_before_action :authorized, only: [:create]
 
   def index
     @accounts = Account.all
