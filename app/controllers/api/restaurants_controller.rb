@@ -24,7 +24,7 @@ class Api::RestaurantsController < ApplicationController
   def update
     @restaurant = Restaurant.find_by(id: params[:id])
     @restaurant.update(restaurant_params)
-    render json: @post
+    render json: @restaurant
   end
 
   def destroy
@@ -35,6 +35,6 @@ class Api::RestaurantsController < ApplicationController
   private
 
   def restaurant_params
-    params.require(:restaurant).permit(:name, :location)
+    params.require(:restaurant).permit(:name, :location, :account_id)
   end
 end

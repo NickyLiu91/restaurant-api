@@ -1,5 +1,6 @@
 class OrderSerializer < ActiveModel::Serializer
-  attributes :id, :items
+  attributes :id, :totalPrice
 
   belongs_to :restaurant
+  has_many :orderItems
 end

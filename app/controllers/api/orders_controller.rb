@@ -24,7 +24,7 @@ class Api::OrdersController < ApplicationController
   def update
     @order = Order.find_by(id: params[:id])
     @order.update(order_params)
-    render json: @post
+    render json: @order
   end
 
   def destroy
@@ -35,6 +35,6 @@ class Api::OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:items)
+    params.require(:order).permit(:restaurant_id, :totalPrice)
   end
 end

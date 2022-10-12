@@ -34,7 +34,7 @@ class Api::AccountsController < ApplicationController
   def update
     @account = Account.find_by(id: params[:id])
     @account.update(account_params)
-    render json: @post
+    render json: @account
   end
 
   def destroy

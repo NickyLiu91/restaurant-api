@@ -1,6 +1,6 @@
 class Account < ApplicationRecord
   has_secure_password
-  validates :name, uniqueness: { case_sensitive: false} 
+  validates :name, uniqueness: { case_sensitive: false}
 
-  has_many :restaurants
+  has_one :restaurants
 end

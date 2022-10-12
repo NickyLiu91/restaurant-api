@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2022_10_11_095034) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.string "items", default: [], array: true
+    t.integer "totalPrice"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "restaurant_id"
