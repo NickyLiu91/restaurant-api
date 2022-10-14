@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2022_10_12_090655) do
     t.string "email"
     t.integer "phone"
     t.string "rank"
+    t.integer "restaurant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
@@ -34,16 +35,10 @@ ActiveRecord::Schema.define(version: 2022_10_12_090655) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "orderitems", force: :cascade do |t|
-    t.string "name"
-    t.decimal "price"
-    t.string "order_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "orders", force: :cascade do |t|
     t.decimal "totalPrice"
+    t.string "orderItems", array: true
+    t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "restaurant_id"
