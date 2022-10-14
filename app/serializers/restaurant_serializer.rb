@@ -1,8 +1,8 @@
 class RestaurantSerializer < ActiveModel::Serializer
-  attributes :id, :name, :location, :owner
+  attributes :id, :name, :location
 
-  belongs_to :owner
+  belongs_to :account
   has_many :orders
   has_many :menuitems
-  has_many :tables
+  has_many :accounts
 end
