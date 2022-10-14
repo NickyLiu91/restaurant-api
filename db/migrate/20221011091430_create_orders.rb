@@ -3,6 +3,7 @@ class CreateOrders < ActiveRecord::Migration[5.2]
     create_table :orders do |t|
       t.decimal :totalPrice
       t.string :orderItems, array: true
+      t.string :location
 
       t.timestamps
     end

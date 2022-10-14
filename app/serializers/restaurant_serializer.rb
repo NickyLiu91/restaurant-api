@@ -4,4 +4,5 @@ class RestaurantSerializer < ActiveModel::Serializer
   belongs_to :account
   has_many :orders
   has_many :menuitems
+  has_many :accounts
 end
