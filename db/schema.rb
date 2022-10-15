@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2022_10_12_090655) do
     t.string "name"
     t.decimal "price"
     t.string "image"
-    t.string "restaurant_id"
+    t.integer "restaurant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
