@@ -1,4 +1,6 @@
 class Api::OrdersController < ApplicationController
+  # accepts_nested_attributes_for :orderItems
+
   def index
     @orders = Order.all
     render json: @orders
@@ -35,6 +37,6 @@ class Api::OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:restaurant_id, :totalPrice)
+    params.require(:order).permit(:restaurant_id, :totalPrice, :location, :orderItems => [:name, :price])
   end
 end
