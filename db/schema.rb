@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2022_10_12_090655) do
 
   create_table "orders", force: :cascade do |t|
     t.decimal "totalPrice"
-    t.string "orderItems", array: true
+    t.json "orderItems", array: true
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
