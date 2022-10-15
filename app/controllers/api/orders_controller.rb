@@ -17,6 +17,7 @@ class Api::OrdersController < ApplicationController
 
   def create
     @order = Order.create(order_params)
+    render json: @order
   end
 
   def edit

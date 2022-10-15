@@ -15,6 +15,7 @@ class Api::MenuitemsController < ApplicationController
 
   def create
     @menuitem = Menuitem.create(menuitem_params)
+    render json: @menuitem
   end
 
   def edit

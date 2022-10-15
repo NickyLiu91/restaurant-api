@@ -15,6 +15,7 @@ class Api::RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.create(restaurant_params)
+    render json: @restaurant
   end
 
   def edit
