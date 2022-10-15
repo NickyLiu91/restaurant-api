@@ -23,15 +23,15 @@ menuItem4 = Menuitem.create(name: "Candy", price: 1.00, restaurant_id: restauran
 menuItem5 = Menuitem.create(name: "Pasta", price: 15.00, restaurant_id: restaurant2.id)
 menuItem6 = Menuitem.create(name: "Soup", price: 3.00, restaurant_id: restaurant2.id)
 
-order1 = Order.create(restaurant_id: restaurant1.id)
-order2 = Order.create(restaurant_id: restaurant1.id)
-
-order3 = Order.create(restaurant_id: restaurant2.id)
-order4 = Order.create(restaurant_id: restaurant2.id)
-
 table1 = Account.create(name: "Table 1", rank: "table", password: "aaa", restaurant_id: restaurant1.id)
 table2 = Account.create(name: "Table 2", rank: "table", password: "bbb", restaurant_id: restaurant1.id)
 table3 = Account.create(name: "Table 3", rank: "table", password: "ccc", restaurant_id: restaurant2.id)
+
+order1 = Order.create(orderItems: [{name: "Chicken", price: 5.00}, {name: "Chicken", price: 5.00}, {name: "Pizza", price: 20.00}], restaurant_id: restaurant1.id, location: table1.name, totalPrice: 30.00)
+order2 = Order.create(orderItems: [{name: "Burger", price: 2.00}, {name: "Burger", price: 2.00}, {name: "Pizza", price: 20.00}], restaurant_id: restaurant1.id, location: table2.name, totalPrice: 24.00)
+
+order3 = Order.create(orderItems: [{name: "Candy", price: 1.00}, {name: "Candy", price: 1.00}], restaurant_id: restaurant2.id, location: table3.name, totalPrice: 22.00)
+order4 = Order.create(orderItems: [{name: "Pasta", price: 15.00}, {name: "Soup", price: 3.00}], restaurant_id: restaurant2.id, location: "online", totalPrice: 8.00)
 
 
 
