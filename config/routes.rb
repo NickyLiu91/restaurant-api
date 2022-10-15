@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
       resources :accounts
       post '/login', to: 'auth#create'
+      get '/profile', to: 'accounts#profile'
       resources :restaurants
       resources :orders
       resources :menuitems

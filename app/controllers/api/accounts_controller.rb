@@ -1,6 +1,10 @@
 class Api::AccountsController < ApplicationController
   skip_before_action :authorized, only: [:create]
 
+  def profile
+    render json: { account: AccountSerializer.new(current_account) }, status: :accepted
+  end
+
   def index
     @accounts = Account.all
     render json: @accounts
