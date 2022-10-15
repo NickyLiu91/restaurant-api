@@ -5,5 +5,5 @@ class Account < ApplicationRecord
   # belongs_to :sourceRestaurant, class_name: 'Restaurant', optional: true
   belongs_to :restaurant, optional: true
 
-  has_one :restaurant
+  has_many :restaurants
 end

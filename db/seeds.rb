@@ -13,6 +13,7 @@ account2 = Account.create(name: "Account 2", email: "test2@gmail.com", phone: 22
 
 restaurant1 = Restaurant.create(name: "Restaurant 1", location: "Narnia", account_id: account1.id)
 restaurant2 = Restaurant.create(name: "Restaurant 2", location: "Mordor", account_id: account2.id)
+restaurant3 = Restaurant.create(name: "Restaurant 3", location: "Mordoria", account_id: account2.id)
 
 menuItem1 = Menuitem.create(name: "Chicken", price: 5.00, restaurant_id: restaurant1.id)
 menuItem2 = Menuitem.create(name: "Burger", price: 2.00, restaurant_id: restaurant1.id)
@@ -28,6 +29,141 @@ order2 = Order.create(restaurant_id: restaurant1.id)
 order3 = Order.create(restaurant_id: restaurant2.id)
 order4 = Order.create(restaurant_id: restaurant2.id)
 
-table1 = Account.create(name: "Table 1", restaurant_id: 1)
-table2 = Account.create(name: "Table 2", restaurant_id: 1)
-table3 = Account.create(name: "Table 3", restaurant_id: 2)
+table1 = Account.create(name: "Table 1", rank: "table", password: "aaa", restaurant_id: restaurant1.id)
+table2 = Account.create(name: "Table 2", rank: "table", password: "bbb", restaurant_id: restaurant1.id)
+table3 = Account.create(name: "Table 3", rank: "table", password: "ccc", restaurant_id: restaurant2.id)
+
+
+
+# LOGIN
+# fetch(`http://localhost:3000/api/login`, {
+#    method: 'POST',
+#    headers: {
+#       'Content-Type': 'application/json',
+#       'Accept': 'application/json'
+#    },
+#    body: JSON.stringify(
+#    {
+#      account: {
+#         name: "Admin Account",
+#         password: "aaa"
+#      }
+#    }
+#   )
+# })
+# .then(res => res.json())
+# .then(json => {localStorage.setItem('jwt', json.jwt)})
+
+
+# GET ALL ACCOUNTS
+# fetch('http://localhost:3000/api/accounts', {
+#    method: 'GET',
+#    headers: {
+#       Authorization: `Bearer ${localStorage.getItem('jwt')}`
+#    }
+# })
+# .then(res => res.json())
+# .then(json => {console.log(json)})
+
+
+# GET ALL RESTAURANTS
+# fetch('http://localhost:3000/api/restaurants', {
+#    method: 'GET',
+#    headers: {
+#       Authorization: `Bearer ${localStorage.getItem('jwt')}`
+#    }
+# })
+# .then(res => res.json())
+# .then(json => {console.log(json)})
+
+
+# GET ALL ORDERS
+# fetch('http://localhost:3000/api/orders', {
+#    method: 'GET',
+#    headers: {
+#       Authorization: `Bearer ${localStorage.getItem('jwt')}`
+#    }
+# })
+# .then(res => res.json())
+# .then(json => {console.log(json)})
+
+
+
+#CREATE MANAGER
+# fetch(`http://localhost:3000/api/accounts`, {
+#    method: 'POST',
+#    headers: {
+#       'Content-Type': 'application/json',
+#       'Accept': 'application/json'
+#    },
+#    body: JSON.stringify(
+#    {
+#      account: {
+#         name: "Account 3",
+#         email: "test@gmail.com",
+#         phone: 7777777,
+#         rank: "manager",
+#         password: "ccc"
+#      }
+#    }
+#   )
+# })
+# .then(res => res.json())
+# .then(json => {localStorage.setItem('jwt', json.jwt)})
+
+
+# CREATE TABLE
+# fetch(`http://localhost:3000/api/accounts`, {
+#    method: 'POST',
+#    headers: {
+#       'Content-Type': 'application/json',
+#       'Accept': 'application/json'
+#    },
+#    body: JSON.stringify(
+#    {
+#      account: {
+#         name: "table5",
+#         rank: "table",
+#         password: "444",
+#         restaurant_id: 1
+#      }
+#    }
+#   )
+# })
+# .then(res => res.json())
+# .then(json => {localStorage.setItem('jwt', json.jwt)})
+
+
+# CREATE RESTAURANT
+# fetch(`http://localhost:3000/api/restaurants`, {
+#    method: 'POST',
+#    headers: {
+#       'Content-Type': 'application/json',
+#       'Accept': 'application/json',
+#        Authorization: `Bearer ${localStorage.getItem('jwt')}`
+#    },
+#    body: JSON.stringify(
+#    {
+#         name: "Restaurant 2",
+#         location: "Magic Land",
+#         account_id: 2
+#    }
+#   )
+# })
+
+
+#CREATE ORDER
+# fetch(`http://localhost:3000/api/orders`, {
+#    method: 'POST',
+#    headers: {
+#       'Content-Type': 'application/json',
+#       'Accept': 'application/json',
+#        Authorization: `Bearer ${localStorage.getItem('jwt')}`
+#    },
+#    body: JSON.stringify(
+#    {
+#         items: [{"chicken": 5.00}, {"ham": 3.00}],
+#         restaurant_id: 2
+#    }
+#   )
+# })
