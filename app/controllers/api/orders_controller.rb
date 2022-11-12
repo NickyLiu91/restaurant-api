@@ -1,5 +1,6 @@
 class Api::OrdersController < ApplicationController
   # accepts_nested_attributes_for :orderItems
+  skip_before_action :authorized, only: [:create]
 
   def index
     @orders = Order.all
