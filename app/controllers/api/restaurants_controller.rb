@@ -1,4 +1,11 @@
 class Api::RestaurantsController < ApplicationController
+  skip_before_action :authorized, only: [:menu]
+
+  def menu
+    @restaurant = Restaurant.find(params[:id])
+    render json: @restaurant
+  end
+
   def index
     @restaurants = Restaurant.all
     render json: @restaurants
