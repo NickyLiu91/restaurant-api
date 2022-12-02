@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2022_10_12_090655) do
     t.decimal "totalPrice"
     t.json "orderItems", array: true
     t.string "location"
+    t.boolean "boolean"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "restaurant_id"

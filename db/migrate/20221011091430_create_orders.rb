@@ -4,6 +4,7 @@ class CreateOrders < ActiveRecord::Migration[5.2]
       t.decimal :totalPrice
       t.json :orderItems, array: true
       t.string :location
+      t.boolean :boolean
 
       t.timestamps
     end

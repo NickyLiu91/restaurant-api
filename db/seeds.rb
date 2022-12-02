@@ -27,11 +27,12 @@ menuItem6 = Menuitem.create(name: "Soup", price: 3.00, restaurant_id: restaurant
 # table2 = Account.create(name: "Table 2", rank: "table", password: "bbb", restaurant_id: restaurant1.id)
 # table3 = Account.create(name: "Table 3", rank: "table", password: "ccc", restaurant_id: restaurant2.id)
 
-order1 = Order.create(orderItems: [{name: "Chicken", price: 5.00}, {name: "Chicken", price: 5.00}, {name: "Pizza", price: 20.00}], restaurant_id: restaurant1.id, location: "restaurant", totalPrice: 30.00)
-order2 = Order.create(orderItems: [{name: "Burger", price: 2.00}, {name: "Burger", price: 2.00}, {name: "Pizza", price: 20.00}], restaurant_id: restaurant1.id, location: "restaurant", totalPrice: 24.00)
+order1 = Order.create(orderItems: [{name: "Chicken", price: 5.00}, {name: "Chicken", price: 5.00}, {name: "Pizza", price: 20.00}], restaurant_id: restaurant1.id, location: "restaurant", totalPrice: 30.00, status: true)
+order2 = Order.create(orderItems: [{name: "Burger", price: 2.00}, {name: "Burger", price: 2.00}, {name: "Pizza", price: 20.00}], restaurant_id: restaurant1.id, location: "restaurant", totalPrice: 24.00, status: true)
+order2 = Order.create(orderItems: [{name: "Pizza", price: 20.00}, {name: "Pizza", price: 20.00}], restaurant_id: restaurant1.id, location: "restaurant", totalPrice: 40.00, status: false)
 
-order3 = Order.create(orderItems: [{name: "Candy", price: 1.00}, {name: "Candy", price: 1.00}], restaurant_id: restaurant2.id, location: "restaurant", totalPrice: 22.00)
-order4 = Order.create(orderItems: [{name: "Pasta", price: 15.00}, {name: "Soup", price: 3.00}], restaurant_id: restaurant2.id, location: "online", totalPrice: 8.00)
+order3 = Order.create(orderItems: [{name: "Candy", price: 1.00}, {name: "Candy", price: 1.00}], restaurant_id: restaurant2.id, location: "restaurant", totalPrice: 22.00, status: true)
+order4 = Order.create(orderItems: [{name: "Pasta", price: 15.00}, {name: "Soup", price: 3.00}], restaurant_id: restaurant2.id, location: "online", totalPrice: 8.00, status: false)
 
 
 
