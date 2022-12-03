@@ -8,8 +8,10 @@
 
 account1 = Account.create(name: "Admin Account", email: "test1@gmail.com", phone: 1111111,
         rank: "admin", password: "aaa")
-account2 = Account.create(name: "Account 2", email: "test2@gmail.com", phone: 2222222,
+account2 = Account.create(name: "Owner 1", email: "test2@gmail.com", phone: 2222222,
         rank: "owner", password: "bbb")
+account3 = Account.create(name: "Employee 1", email: "test3@gmail.com", phone: 3333333,
+        rank: "employee", password: "ccc", restaurant_id: 1)
 
 restaurant1 = Restaurant.create(name: "Restaurant 1", location: "Narnia", account_id: account1.id)
 restaurant2 = Restaurant.create(name: "Restaurant 2", location: "Mordor", account_id: account2.id)
@@ -27,12 +29,12 @@ menuItem6 = Menuitem.create(name: "Soup", price: 3.00, restaurant_id: restaurant
 # table2 = Account.create(name: "Table 2", rank: "table", password: "bbb", restaurant_id: restaurant1.id)
 # table3 = Account.create(name: "Table 3", rank: "table", password: "ccc", restaurant_id: restaurant2.id)
 
-order1 = Order.create(orderItems: [{name: "Chicken", price: 5.00}, {name: "Chicken", price: 5.00}, {name: "Pizza", price: 20.00}], restaurant_id: restaurant1.id, location: "restaurant", totalPrice: 30.00, status: true)
-order2 = Order.create(orderItems: [{name: "Burger", price: 2.00}, {name: "Burger", price: 2.00}, {name: "Pizza", price: 20.00}], restaurant_id: restaurant1.id, location: "restaurant", totalPrice: 24.00, status: true)
-order2 = Order.create(orderItems: [{name: "Pizza", price: 20.00}, {name: "Pizza", price: 20.00}], restaurant_id: restaurant1.id, location: "restaurant", totalPrice: 40.00, status: false)
+order1 = Order.create(orderItems: [{name: "Chicken", price: 5.00, status: "Not Started"}, {name: "Chicken", price: 5.00, status: "Not Started"}, {name: "Pizza", price: 20.00, status: "Not Started"}], restaurant_id: restaurant1.id, location: "restaurant", totalPrice: 30.00, status: true)
+order2 = Order.create(orderItems: [{name: "Burger", price: 2.00, status: "Not Started"}, {name: "Burger", price: 2.00, status: "Not Started"}, {name: "Pizza", price: 20.00, status: "Not Started"}], restaurant_id: restaurant1.id, location: "restaurant", totalPrice: 24.00, status: true)
+order2 = Order.create(orderItems: [{name: "Pizza", price: 20.00, status: "Not Started"}, {name: "Pizza", price: 20.00, status: "Not Started"}], restaurant_id: restaurant1.id, location: "online", totalPrice: 40.00, status: false)
 
-order3 = Order.create(orderItems: [{name: "Candy", price: 1.00}, {name: "Candy", price: 1.00}], restaurant_id: restaurant2.id, location: "restaurant", totalPrice: 22.00, status: true)
-order4 = Order.create(orderItems: [{name: "Pasta", price: 15.00}, {name: "Soup", price: 3.00}], restaurant_id: restaurant2.id, location: "online", totalPrice: 8.00, status: false)
+order3 = Order.create(orderItems: [{name: "Candy", price: 1.00, status: "In Progress"}, {name: "Candy", price: 1.00, status: "In Progress"}], restaurant_id: restaurant2.id, location: "restaurant", totalPrice: 22.00, status: true)
+order4 = Order.create(orderItems: [{name: "Pasta", price: 15.00, status: "Complete"}, {name: "Soup", price: 3.00, status: "Complete"}], restaurant_id: restaurant2.id, location: "online", totalPrice: 8.00, status: false)
 
 
 

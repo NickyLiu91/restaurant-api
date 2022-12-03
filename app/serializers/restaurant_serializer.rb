@@ -1,5 +1,5 @@
 class RestaurantSerializer < ActiveModel::Serializer
-  attributes :id, :name, :location
+  attributes :id, :name, :location, :orders
 
   belongs_to :account
   has_many :orders

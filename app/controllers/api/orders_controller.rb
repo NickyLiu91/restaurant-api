@@ -39,6 +39,6 @@ class Api::OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:id, :restaurant_id, :totalPrice, :location, :orderItems => [:name, :price])
+    params.require(:order).permit(:id, :restaurant_id, :totalPrice, :location, :status, :orderItems => [:name, :price, :status])
   end
 end
