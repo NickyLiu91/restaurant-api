@@ -29,12 +29,12 @@ menuItem6 = Menuitem.create(name: "Soup", price: 3.00, restaurant_id: restaurant
 # table2 = Account.create(name: "Table 2", rank: "table", password: "bbb", restaurant_id: restaurant1.id)
 # table3 = Account.create(name: "Table 3", rank: "table", password: "ccc", restaurant_id: restaurant2.id)
 
-order1 = Order.create(orderItems: [{name: "Chicken", price: 5.00, status: "Not Started"}, {name: "Chicken", price: 5.00, status: "Not Started"}, {name: "Pizza", price: 20.00, status: "Not Started"}], restaurant_id: restaurant1.id, location: "restaurant", totalPrice: 30.00, status: true)
-order2 = Order.create(orderItems: [{name: "Burger", price: 2.00, status: "Not Started"}, {name: "Burger", price: 2.00, status: "Not Started"}, {name: "Pizza", price: 20.00, status: "Not Started"}], restaurant_id: restaurant1.id, location: "restaurant", totalPrice: 24.00, status: true)
+order1 = Order.create(orderItems: [{name: "Chicken", price: 5.00, status: "Not Started"}, {name: "Chicken", price: 5.00, status: "Not Started"}, {name: "Pizza", price: 20.00, status: "Not Started"}], restaurant_id: restaurant1.id, location: "restaurant", totalPrice: 30.00, status: "Not Started")
+order2 = Order.create(orderItems: [{name: "Burger", price: 2.00, status: "Not Started"}, {name: "Burger", price: 2.00, status: "Not Started"}, {name: "Pizza", price: 20.00, status: "Not Started"}], restaurant_id: restaurant1.id, location: "restaurant", totalPrice: 24.00, status: "Not Started")
 order2 = Order.create(orderItems: [{name: "Pizza", price: 20.00, status: "Not Started"}, {name: "Pizza", price: 20.00, status: "Not Started"}], restaurant_id: restaurant1.id, location: "online", totalPrice: 40.00, status: false)
 
-order3 = Order.create(orderItems: [{name: "Candy", price: 1.00, status: "In Progress"}, {name: "Candy", price: 1.00, status: "In Progress"}], restaurant_id: restaurant2.id, location: "restaurant", totalPrice: 22.00, status: true)
-order4 = Order.create(orderItems: [{name: "Pasta", price: 15.00, status: "Complete"}, {name: "Soup", price: 3.00, status: "Complete"}], restaurant_id: restaurant2.id, location: "online", totalPrice: 8.00, status: false)
+order3 = Order.create(orderItems: [{name: "Candy", price: 1.00, status: "In Progress"}, {name: "Candy", price: 1.00, status: "In Progress"}], restaurant_id: restaurant2.id, location: "restaurant", totalPrice: 22.00, status: "In Progress")
+order4 = Order.create(orderItems: [{name: "Pasta", price: 15.00, status: "Complete"}, {name: "Soup", price: 3.00, status: "Complete"}], restaurant_id: restaurant2.id, location: "online", totalPrice: 8.00, status: "Complete")
 
 
 
