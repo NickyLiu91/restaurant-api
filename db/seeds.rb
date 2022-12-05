@@ -17,13 +17,14 @@ restaurant1 = Restaurant.create(name: "Restaurant 1", location: "Narnia", accoun
 restaurant2 = Restaurant.create(name: "Restaurant 2", location: "Mordor", account_id: account2.id)
 restaurant3 = Restaurant.create(name: "Restaurant 3", location: "Mordoria", account_id: account2.id)
 
-menuItem1 = Menuitem.create(name: "Chicken", price: 5.00, restaurant_id: restaurant1.id)
-menuItem2 = Menuitem.create(name: "Burger", price: 2.00, restaurant_id: restaurant1.id)
-menuItem3 = Menuitem.create(name: "Pizza", price: 20.00, restaurant_id: restaurant1.id)
+menuItem1 = Menuitem.create(name: "Chicken", image: "chicken.png", price: 5.00, restaurant_id: restaurant1.id)
+menuItem2 = Menuitem.create(name: "Burger", image: "burger.png", price: 2.00, restaurant_id: restaurant1.id)
+menuItem3 = Menuitem.create(name: "Pizza", image: "pizza.png", price: 20.00, restaurant_id: restaurant1.id)
 
-menuItem4 = Menuitem.create(name: "Candy", price: 1.00, restaurant_id: restaurant2.id)
-menuItem5 = Menuitem.create(name: "Pasta", price: 15.00, restaurant_id: restaurant2.id)
-menuItem6 = Menuitem.create(name: "Soup", price: 3.00, restaurant_id: restaurant2.id)
+menuItem4 = Menuitem.create(name: "Candy", image: "candy.png", price: 1.00, restaurant_id: restaurant2.id)
+menuItem5 = Menuitem.create(name: "Pasta", image: "pasta.png", price: 15.00, restaurant_id: restaurant2.id)
+menuItem6 = Menuitem.create(name: "Soup", image: "soup.png", price: 3.00, restaurant_id: restaurant2.id)
+menuItem7 = Menuitem.create(name: "Chicken", image: "chicken.png", price: 55.00, restaurant_id: restaurant2.id)
 
 # table1 = Account.create(name: "Table 1", rank: "table", password: "aaa", restaurant_id: restaurant1.id)
 # table2 = Account.create(name: "Table 2", rank: "table", password: "bbb", restaurant_id: restaurant1.id)
