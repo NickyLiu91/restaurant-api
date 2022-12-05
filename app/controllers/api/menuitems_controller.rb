@@ -24,7 +24,7 @@ class Api::MenuitemsController < ApplicationController
 
   def update
     @menuitem = Menuitem.find_by(id: params[:id])
-    @menuitem.uxpdate(menuitem_params)
+    @menuitem.update(menuitem_params)
     render json: @menuitem
   end
 
