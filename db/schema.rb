@@ -50,7 +50,6 @@ ActiveRecord::Schema.define(version: 2023_09_30_052454) do
   create_table "menuitems", force: :cascade do |t|
     t.string "name"
     t.decimal "price"
-    t.string "image"
     t.integer "restaurant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
