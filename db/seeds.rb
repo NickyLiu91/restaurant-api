@@ -6,16 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-account1 = Account.create(name: "Admin Account", email: "test1@gmail.com", phone: 1111111,
+account1 = Account.create(name: "Admin Account", email: "admin@gmail.com", phone: 1111111,
         rank: "Admin", password: "aaa")
-account2 = Account.create(name: "Owner 1", email: "test2@gmail.com", phone: 2222222,
+account2 = Account.create(name: "Owner 1", email: "owner1@gmail.com", phone: 2222222,
         rank: "Owner", password: "bbb")
-account3 = Account.create(name: "Employee 1", email: "test3@gmail.com", phone: 3333333,
-        rank: "Employee", password: "ccc", restaurant_id: 1)
+account3 = Account.create(name: "Owner 2", email: "owner2@gmail.com", phone: 3333333,
+        rank: "Owner", password: "ccc")
+account4 = Account.create(name: "Employee 1", email: "employee1@gmail.com", phone: 4444444,
+        rank: "Employee", password: "ddd", restaurant_id: 1)
 
-restaurant1 = Restaurant.create(name: "Restaurant 1", location: "Narnia", account_id: account1.id)
-restaurant2 = Restaurant.create(name: "Restaurant 2", location: "Mordor", account_id: account2.id)
-restaurant3 = Restaurant.create(name: "Restaurant 3", location: "Mordoria", account_id: account2.id)
+restaurant1 = Restaurant.create(name: "Restaurant 1", location: "Narnia", account_id: account2.id)
+restaurant2 = Restaurant.create(name: "Restaurant 2", location: "Mordor", account_id: account3.id)
+restaurant3 = Restaurant.create(name: "Restaurant 3", location: "Mordoria", account_id: account3.id)
 
 menuItem1 = Menuitem.create(name: "Chicken", image: "chicken.png", price: 5.00, restaurant_id: restaurant1.id)
 menuItem2 = Menuitem.create(name: "Burger", image: "burger.png", price: 2.00, restaurant_id: restaurant1.id)
