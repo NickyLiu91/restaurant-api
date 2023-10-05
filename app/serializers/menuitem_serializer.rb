@@ -1,12 +1,12 @@
 class MenuitemSerializer < ActiveModel::Serializer
 
   include Rails.application.routes.url_helpers
-  attributes :id, :name, :price, :featured_image
-  
-  def featured_image
-    if object.featured_image.attached?
+  attributes :id, :name, :price, :image
+
+  def image
+    if object.image.attached?
       {
-        url: rails_blob_url(object.featured_image)
+        url: rails_blob_url(object.image)
       }
     end
   end

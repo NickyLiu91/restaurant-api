@@ -1,4 +1,14 @@
 class Api::MenuitemsController < ApplicationController
+  include Rails.application.routes.url_helpers
+
+  def image
+    if object.image.attached?
+      {
+        url: rails_blob_url(object.image)
+      }
+    end
+end
+
   def index
     @menuitems = Menuitem.all
     render json: @menuitems
@@ -23,8 +33,12 @@ class Api::MenuitemsController < ApplicationController
   end
 
   def update
+    # puts menuitem_params
+    puts "aaa"
+    puts menuitem2_params
+    puts "bbb"
     @menuitem = Menuitem.find_by(id: params[:id])
-    @menuitem.update(menuitem_params)
+    @menuitem.update(menuitem2_params)
     render json: @menuitem
   end
 
@@ -36,6 +50,11 @@ class Api::MenuitemsController < ApplicationController
   private
 
   def menuitem_params
-    params.require(:menuitem).permit(:restaurant_id, :name, :price, :featured_image)
+    params.require(:menuitem).permit(:restaurant_id, :name, :price, :image)
   end
+  
+  def menuitem2_params
+    params.permit(:id, :restaurant_id, :name, :price, :image)
+  end
+
 end
