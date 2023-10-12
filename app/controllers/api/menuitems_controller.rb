@@ -44,6 +44,7 @@ end
   def removeImage
     puts @menuitem_params
     @menuitem = Menuitem.find_by(id: params[:id])
+    @menuitem.update(menuitem_params)
     @image = @menuitem.image
     @image.purge
     render json: @menuitem
