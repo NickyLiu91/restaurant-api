@@ -32,18 +32,20 @@ end
     @menuitem = Menuitem.find_by(id: params[:id])
   end
 
-  # def update
-  #   @menuitem = Menuitem.find_by(id: params[:id])
-  #   @menuitem.update(menuitem2_params)
-  #   render json: @menuitem
-  # end
+
 
   def update
-    puts "aaa"
     puts @menuitem_params
-    puts "bbb"
     @menuitem = Menuitem.find_by(id: params[:id])
     @menuitem.update(menuitem_params)
+    render json: @menuitem
+  end
+
+  def removeImage
+    puts @menuitem_params
+    @menuitem = Menuitem.find_by(id: params[:id])
+    @image = @menuitem.image
+    @image.purge
     render json: @menuitem
   end
 

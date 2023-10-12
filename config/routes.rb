@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       post '/login', to: 'auth#create'
       get '/profile', to: 'accounts#profile'
       get 'restaurants/:id/menu/', to: 'restaurants#menu'
+      put 'menuitems/:id/removeImage/', to: 'menuitems#removeImage'
       resources :restaurants
       resources :orders
       resources :menuitems
